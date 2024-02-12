@@ -8,7 +8,7 @@ export default function Login() {
   const navigate = useNavigate();
   const [values, setValues] = useState({ username: "", password: "" });
   useEffect(() => {
-    if (localStorage.getItem(process.env.REACT_APP_LOCALHOST_KEY)) {
+    if (localStorage.getItem("USER")) {
       navigate("/image");
     }
   }, []);
@@ -42,9 +42,7 @@ export default function Login() {
         alert(data.msg);
       }
       if (data.status === true) {
-        localStorage.setItem(
-          process.env.REACT_APP_LOCALHOST_KEY,
-          JSON.stringify(data.user)
+        localStorage.setItem("USER",JSON.stringify(data.user)
         );
 
         navigate("/image");
