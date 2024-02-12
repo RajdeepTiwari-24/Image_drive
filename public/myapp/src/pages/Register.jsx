@@ -15,7 +15,7 @@ export default function Register() {
   });
 
   useEffect(() => {
-    if (localStorage.getItem(process.env.REACT_APP_LOCALHOST_KEY)) {
+    if (localStorage.getItem("USER")) {
       navigate("/image");
     }
   }, []);
@@ -58,7 +58,7 @@ export default function Register() {
       }
       if (data.status === true) {
         localStorage.setItem(
-          process.env.REACT_APP_LOCALHOST_KEY,
+          "USER",
           JSON.stringify(data.user)
         );
         navigate("/image");

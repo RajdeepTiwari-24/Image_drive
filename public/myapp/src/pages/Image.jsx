@@ -5,7 +5,7 @@ import styled from "styled-components";
 export default function Image() {
     const navigate = useNavigate();
     useEffect(() => {
-        if (!localStorage.getItem(process.env.REACT_APP_LOCALHOST_KEY)) {
+        if (!localStorage.getItem("USER")) {
           navigate("/login");
         }
       }, []);
